@@ -39,7 +39,6 @@ subtree = FOLDER_MAP[model_type]
 try:
     run_root = ensure_subtree_available(subtree)
     check_path = run_root if model_type == "Hybrid" else os.path.join(run_root, "best_model")
-    st.caption(f"Selected folder: `{run_root}`")
     if os.path.isdir(check_path):
         st.success(f"Found model artifacts in: `{check_path}`")
     else:
@@ -54,7 +53,6 @@ def get_translator_cached(run_dir: str, prefer: str):
 
 lr = get_translator_cached(run_root, PREFER_MAP[model_type])
 translator = lr.translator
-st.caption(f"Loaded backend: **{lr.backend}** — {lr.info}")
 
 st.markdown("---")
 cn_input = st.text_area("Enter Chinese sentence:", height=120, placeholder="输入中文句子…")
