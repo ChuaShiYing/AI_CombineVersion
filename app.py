@@ -33,7 +33,7 @@ def ensure_subtree_available(subtree: str):
         )
     return local_path
 
-model_type = st.selectbox("Choose Model", ("SMT", "NMT", "Hybrid"), index=1)
+model_type = st.selectbox("Choose Model", ("SMT", "NMT", "Hybrid"), index=0)
 subtree = FOLDER_MAP[model_type]
 
 try:
