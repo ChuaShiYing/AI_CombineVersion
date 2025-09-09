@@ -57,7 +57,7 @@ translator = lr.translator
 st.markdown("---")
 cn_input = st.text_area("Enter Chinese sentence:", height=120, placeholder="输入中文句子…")
 
-if st.button("Translate", use_container_width=True):
+if st.button("Translate", use_container_width=True,type="primary"):
     if not cn_input.strip():
         st.warning("Please enter a Chinese sentence.")
     else:
